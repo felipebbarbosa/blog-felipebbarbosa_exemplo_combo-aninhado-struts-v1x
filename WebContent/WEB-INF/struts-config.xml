@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>		
+		<form-bean name="CidadeForm" type="com.wordpress.felipebbarbosa.comboaninhado.form.CidadeForm"/>		
+	</form-beans>
+		
+	<action-mappings>	
+		<action path="/abreCadastroCidade" scope="request"
+				type="com.wordpress.felipebbarbosa.comboaninhado.action.AbreCadastroCidadeAction">
+			<forward name="ok" path="/cadastro-cidade.jsp"/>		
+		</action>
+	
+		<action path="/carregaEstados" scope="request" 
+				type="com.wordpress.felipebbarbosa.comboaninhado.action.CarregaEstadosAction"></action>
+				
+		<action path="/cadastraCidade" scope="request" name="CidadeForm" input="cadastro-cidade.jsp"
+				type="com.wordpress.felipebbarbosa.comboaninhado.action.CadastraCidadeAction">
+			<forward name="ok" path="/ok.jsp"/>		
+		</action>		
+	</action-mappings>	
+	
+</struts-config>
